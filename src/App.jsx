@@ -9,6 +9,7 @@ import {
   SuperQuality,
 } from "./sections";
 import Nav from "./components/Nav";
+import BookRecommendations from "./sections/BookRecommendations";
 
 const App = () => {
   return (
@@ -28,6 +29,9 @@ const App = () => {
       </section>
       <section className="padding">
         <SpecialOffer />
+      </section>
+      <section>
+        <BookRecommendations />
       </section>
       <section className="bg-pale-blue padding">
         <CustomerReviews />
