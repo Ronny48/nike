@@ -36,20 +36,28 @@ const BookRecommendations = () => {
         {books.map((book) => {
           const info = book.volumeInfo;
           return (
-            <div key={book.id} className="bg-white p-4 shadow-md rounded-xl">
-              <img
-                src={info.imageLinks?.thumbnail}
-                alt={info.title}
-                className="mb-2 w-full h-48 object-cover rounded"
-              />
-              <h3 className="font-semibold text-lg">{info.title}</h3>
-              <p className="text-sm text-gray-500">
-                {info.authors?.join(", ")}
-              </p>
-              <p className="text-sm mt-2 line-clamp-3">
-                {info.description || "No description available."}
-              </p>
-            </div>
+            <a
+              key={book.id}
+              href={info.previewLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white p-4 shadow-md rounded-xl block"
+            >
+              <div key={book.id} className="bg-white p-4 shadow-md rounded-xl">
+                <img
+                  src={info.imageLinks?.thumbnail}
+                  alt={info.title}
+                  className="mb-2 w-full h-48 object-cover rounded"
+                />
+                <h3 className="font-semibold text-lg">{info.title}</h3>
+                <p className="text-sm text-gray-500">
+                  {info.authors?.join(", ")}
+                </p>
+                <p className="text-sm mt-2 line-clamp-3">
+                  {info.description || "No description available."}
+                </p>
+              </div>
+            </a>
           );
         })}
       </div>
